@@ -1,0 +1,10 @@
+manifest_version = 1
+
+[module]
+name = "NewBird"
+id = "new_years_bird"
+description = "Play free bird at newyears."
+version = "0.0.1"
+license = "GNU GPLv3"
+authors = ["Fripe"]
+requirements=["aiofiles", "yt-dlp", "PyNaCl", "discord.py[voice]"]
