@@ -1,16 +1,11 @@
 import asyncio
 import datetime
 
-import aiohttp
-import aiofiles
+import discord
+from discord.ext import tasks
 from yt_dlp import YoutubeDL
 
-import discord
-from discord.ext import commands, tasks
-
-
 import breadcord
-
 
 NEW_BIRD = "https://www.youtube.com/watch?v=0LwcvjNJTuM"
 
@@ -60,5 +55,5 @@ class NewBird(breadcord.module.ModuleCog):
         await voice.disconnect()
 
 
-async def setup(bot: breadcord.Bot):
-    await bot.add_cog(NewBird("new_years_bird"))
+async def setup(bot: breadcord.Bot, module: breadcord.module.Module) -> None:
+    await bot.add_cog(NewBird(module.id))
